@@ -1,5 +1,15 @@
-# Welcome to GitHub Desktop!
+# Hotel reservation system
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
+This project was created as a database implementation project, in this case, I worked with wamp to connect database and server. Project is a practice for using databases.
 
-Write your name on line 6, save it, and then head back to GitHub Desktop.
+# Instructions for WAMP
+
+In phpmyadmin, create a database called reservation
+
+Import SQL file in project which is reservation.sql
+
+Move project to www folder in wamp folder
+
+As suggestion: Add a virtual host in localhost, you must give the specific route of the project
+
+In localhost, select the project or the virtual host if you created it
