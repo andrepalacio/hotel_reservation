@@ -1,0 +1,130 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    h1 {
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        color: #fff;
+        margin: 10px 0px 0px;
+    }
+
+    header, nav{
+        background-color: #2537ad;
+        margin: 0px;
+        padding: 10px;
+    }
+    
+    ul {
+        margin: 0px;
+    }
+
+    .dropbtn, .out a {
+        background-color: #ffffff00;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        font-family: sans-serif;
+    }
+
+    .out a{
+        text-decoration: none;
+    }
+
+    .dropbtn:hover, .dropbtn:focus, .out a:hover{
+        background-color: #2980B9;
+    }
+
+    .dropdown, .out {
+        position: relative;
+        display: inline-block;
+        margin: 0px 10px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        width: 100%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown a:hover {background-color: #ddd;}
+
+    .show {display: block;}
+</style>
+
+<header>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <h1>Panel de Administrador</h1>
+</header>
+<nav>
+    <ul>
+        <li class="dropdown">
+            <button onclick="myFunction('1')" class="dropbtn">Administradores</button>
+            <div id="myDropdown1" class="dropdown-content">
+                <a href="registration.php">Agregar administrador</a>
+                <a href="show_users.php">Ver administradores</a>
+                <a href="search_admin.php">Modificar administrador</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <button onclick="myFunction('2')" class="dropbtn">Habitaciones</button>
+            <div id="myDropdown2" class="dropdown-content">
+                <a href="show_rooms.php">Ver habitaciones</a>
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <button onclick="myFunction('3')" class="dropbtn">Reservaciones</button>
+            <div id="myDropdown3" class="dropdown-content">
+                <a href="do_booking.php">Hacer una reserva</a>
+                <a href="show_booking.php">Ver reservas</a>
+                <a href="delete_booking.php">Cancelar reserva</a>
+                <a href="show_delbook.php">Ver reservas canceladas</a>
+            </div>
+        </li>
+        <li class="out"><a href="logout.php">Cerrar sesión</a></li>
+    </ul>
+</nav>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction(num) {
+    var element = "myDropdown".concat(num);
+    document.getElementById(element).classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+</script>
